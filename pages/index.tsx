@@ -229,6 +229,9 @@ const Home: NextPage = () => {
                 src={contractMetadata?.image}
                 alt={`${contractMetadata?.name} preview image`}
               />
+              {/* <MediaRenderer
+              src="ipfs://QmcCqgcEKJBsWLrPgg6aj7RR4jaNXwqNUqzsZ76Aa9Y8Kd/1.glb"
+              alt="ipfs://QmcCqgcEKJBsWLrPgg6aj7RR4jaNXwqNUqzsZ76Aa9Y8Kd/0.jpeg" /> */}
 
               {/* Amount claimed so far */}
               <div className={styles.mintCompletionArea}>
@@ -294,30 +297,23 @@ const Home: NextPage = () => {
                         isDisabled={!canClaim || buttonLoading}
                         onError={(err) => {
                           console.error(err);
-                          alert("Error claiming NFTs");
+                         // alert("Error claiming NFTs");
                         }}
                         onSuccess={() => {
                           setQuantity(1);
-                          alert("Successfully claimed NFTs");
+                         // alert("Successfully claimed NFTs");
                         }}
-                      >
+                        >
                         {buttonLoading ? "Loading..." : buttonText}
                       </Web3Button>
                     )}
                   </div>
                 </>
               )}
-            </div>
+            </div>              
           </>
         )}
       </div>
-      {/* Powered by thirdweb */}{" "}
-      <img
-        src="/logo.png"
-        alt="thirdweb Logo"
-        width={135}
-        className={styles.buttonGapTop}
-      />
     </div>
   );
 };
